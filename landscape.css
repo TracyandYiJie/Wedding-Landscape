@@ -1,0 +1,695 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Import the fonts (ensure paths or sources are correct) */
+@font-face {
+    font-family: 'Biro Script';
+    src: url('fonts/Biro_Script_reduced.otf'); /* Replace with actual path */
+}
+@font-face {
+    font-family: 'Lemon Tuesday';
+    src: url('fonts/Lemon\ Tuesday.otf'); /* Replace with actual path */
+}
+
+/* Body styling */
+
+/* Header styles */
+.fixed-header {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+background-color: rgba(255, 255, 255, 1); /* Initially opaque */
+z-index: 999;
+box-shadow: 0 0.104vw 0.26vw rgba(0, 0, 0, 0.1);
+height: min(10vh, 17.78vw); /* Match this height to the logo */
+display: flex;
+align-items: center;
+padding: 0 2.6vw;
+transition: background-color 0.3s ease; /* Smooth transition for background change */
+}
+
+/* Transparent background when scrolled */
+.fixed-header.transparent {
+background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent when scrolled */
+box-shadow: none; /* Optional: remove shadow when scrolled */
+}
+
+/* Navigation bar styling */
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+}
+
+/* Left aligned links */
+.nav-links-left {
+display: flex;
+gap: 0.26vw;
+}
+
+/* Right aligned RSVP link */
+.nav-links-right {
+margin-left: auto;
+}
+
+.nav-item {
+position: relative; /* Ensures child elements like text stay positioned relative to the image */
+width: 5vw;
+height: 5vh;
+background-size: contain; /* Ensures the image scales properly */
+background-position: center;
+background-repeat: no-repeat;
+text-align: center; /* Centers the text */
+display: flex;
+align-items: center; /* Vertically centers text */
+justify-content: center; /* Horizontally centers text */
+}
+
+.venue-circle {
+background-image: url("wedding graphics/500ppi/Venue.png");
+}
+
+.schedule-circle {
+background-image: url("wedding graphics/500ppi/Schedule.png");
+}
+
+.FAQ-circle {
+background-image: url("wedding graphics/500ppi/Venue.png");
+}
+
+.RSVP-circle {
+background-image: url("wedding graphics/500ppi/RSVP header.png");
+}
+
+/* List items style */
+nav ul {
+display: flex;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+nav ul li {
+margin: 0 0.26vw;
+}
+
+/* Links styling */
+nav ul li a {
+text-decoration: none;
+color: #000;
+font-size: max(1.8vh, 1.8vw);
+border: 0vw solid #ff0000; /* Red circle effect */
+padding: 0.26vw 0.52vw;
+border-radius: 2.6vw;
+transition: background-color 0.3s;
+display: flex;
+align-items: center;
+height: 100%; /* Ensures that the links fill the height of the header */
+}
+
+/* Hover effect for links */
+nav ul li a:hover {
+background-color: #fff;
+color: #000;
+}
+
+/* Center image styling */
+.logo-container {
+position: absolute;
+left: 50%;
+transform: translate(-50%);
+background-color: #fff; /* Ensure the background is white */
+height: 100%; /* Ensure the container height matches the header */
+display: flex;
+align-items: center;
+transition: background-color 0.3s ease, opacity 0.3s ease; /* Add smooth transition */
+}
+
+.logo {
+height: 100%; /* The logo will take up the full height of the container */
+max-height: 7vh; /* Adjust this value to ensure proper sizing */
+width: auto; /* Maintain aspect ratio */
+transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+/* Transparent logo when scrolled */
+.logo-container.transparent {
+background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent when scrolled */
+box-shadow: none; /* Optional: remove shadow when scrolled */
+opacity: 0.5; /* Semi-transparent logo */
+}
+
+html, body {
+height: 100%;
+margin: 0;
+}
+
+body {
+font-family: 'Biro Script', sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+width: 100vw; /* Full width of the viewport */
+max-width: 100vw;
+overflow-x: hidden;
+margin: 0;
+background-color: #fff;
+text-align: center;
+flex-direction: column;
+}
+
+/* Announcement Text - Full Page */
+.home-container {
+display: flex;
+flex-direction: column;
+justify-content: center;  /* Vertically center the content */
+align-items: center;      /* Horizontally center the content */
+height: 120vh;            /* Full viewport height */
+text-align: center;
+margin-top: 435vh;
+}
+
+
+.home-container h1 {
+font-size: max(8vh, 8vw);
+margin-bottom: 1.56vw; /* Add some spacing */
+}
+
+.home-container h2 {
+font-size: max(2vh, 2vw);
+margin-bottom: 1.56vw;
+}
+
+.home-container h3 {
+font-size: max(2vh, 2vw);
+}
+
+.date-line-title {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 2.6vw;
+}
+
+/* Ensures April and the date stay on the same line */
+.date-line {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 0.78vw; /* Add spacing between "April" and "26, 2025" */
+}
+
+.date-line-small {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 0.3vw;
+}
+
+/* Main invitation container */
+.venue-container {
+display: flex;
+justify-content: space-between; /* Ensures space between text and map */
+align-items: flex-start; /* Aligns items at the top */
+gap: 0.2vw; /* Adjust the spacing between text and map */
+height: 100vh;
+width: 90vw;
+}
+
+.invitation {
+text-align: center;
+width: 30%;
+margin: 0 auto;
+}
+
+.invitation big_bold {
+font-weight: bold;
+font-size: max(2vh, 2vw);
+margin-bottom: 0.2vw;
+}
+
+.invitation small_bold {
+font-weight: bold;
+font-size: max(1.8vh, 1.8vw);
+margin-bottom: 0.2vw;
+}
+
+.invitation small_unbold {
+font-size: max(1.8vh, 1.8vw);
+margin-bottom: 0.2vw;
+}
+
+.numbers_font {
+font-family: 'Lemon Tuesday', sans-serif;
+}
+
+.venue {
+margin: 10vh;
+font-size: max(1.5vh, 1.5vw);
+}
+
+.attire-circle {
+position: relative; /* Ensures child elements like text stay positioned relative to the image */
+width: 25vw;
+height: 25vh;
+background-size: contain; /* Ensures the image scales properly */
+background-position: center;
+background-repeat: no-repeat;
+text-align: center; /* Centers the text */
+display: flex;
+align-items: center; /* Vertically centers text */
+justify-content: center; /* Horizontally centers text */
+background-image: url("wedding graphics/500ppi/Attire.png")
+}
+
+/* Map Container */
+.map-container {
+border: 0.104vw dashed black;
+width: 70%;
+filter: grayscale(100%);
+margin: 0;
+}
+
+iframe {
+width: 100%;
+height: 75vh;
+border: 0;
+display: block;
+}
+
+.RSVP-container {
+display: flex;
+flex-direction: column;
+justify-content: center;  /* Vertically center the content */
+align-items: center;      /* Horizontally center the content */
+height: 100vh;            /* Full viewport height */
+text-align: center;     
+}
+
+.RSVP-container h1 {
+font-size: max(2vh, 2vw);
+margin-top: -30vh; /* Move upwards */
+margin-bottom: 0.5vh; /* Adjust spacing */
+}
+
+.RSVP-container h2 {
+font-size: max(4vh, 4vw);
+margin-bottom: 0vw;
+}
+
+.RSVP-container h3 {
+font-size: max(2vh, 2vw);
+}
+
+.RSVP-circle-big {
+position: relative; /* Ensures child elements like text stay positioned relative to the image */
+width: 8vw;
+height: 8vh;
+background-size: contain; /* Ensures the image scales properly */
+background-position: center;
+background-repeat: no-repeat;
+text-align: center; /* Centers the text */
+display: flex;
+align-items: center; /* Vertically centers text */
+justify-content: center; /* Horizontally centers text */
+background-image: url("wedding graphics/500ppi/RSVP Big.png")
+}
+
+.schedule-container {
+text-align: center;
+height: 100vh;
+width: 100%;
+}
+
+h1 {
+font-size: max(2vh, 2vw);
+margin-bottom: 1.04vw;
+}
+
+h2 {
+font-size: max(1.5vh, 1.5vw);
+}
+
+.timeline {
+position: relative;
+width: 100%;
+height: 18.52vh;
+margin-top: 4.63vh;
+}
+
+.wavy-line-container {
+width: 100%; /* Make the container full-width */
+overflow: hidden; /* Ensure no overflow outside the container */
+position: relative; /* For positioning the image */
+}
+
+.wavy-line-image {
+width: 100%; /* Make the image span across the container */
+height: 100%; /* Make the image fill the container height */
+object-fit: cover; /* Ensure the image scales without distortion */
+margin-top: 28vh;
+}
+
+.event {
+position: absolute;
+text-align: center;
+transform: translateY(-50%);
+}
+
+.event-top {
+top: 21vh; /* Position above the line */
+line-height: 1.2;
+}
+
+.event-top-1 {
+top: 23vh;
+left:4%;
+}
+
+.event-top-3 {
+left:25%;
+}
+
+.event-top-5 {
+left:44%;
+}
+
+.event-top-7 {
+left:62%;
+}
+
+.event-top-9 {
+top: 23vh;
+left:82%;
+}
+
+.event-bottom {
+top: 42vh; /* Position below the line */
+line-height: 1.2;
+}
+
+.event-bottom-2 {
+left:15%;
+}
+
+.event-bottom-4 {
+left:35%;
+}
+
+.event-bottom-6 {
+left:53%;
+}
+
+.event-bottom-8 {
+top: 44vh;
+left:74%;
+}
+
+.event-name {
+font-size: max(1.5vh, 1.5vw);
+color: #555;
+margin-bottom: 0.26vw;
+}
+
+.event-time {
+font-size: max(2vh, 2vw);
+font-weight: bold;
+font-family: 'Lemon Tuesday', sans-serif;
+}
+
+.image2 {
+position: absolute;
+opacity: 50%;
+top: -10%;
+left: -5%;
+width: max(32vh, 32vw);
+}
+
+.image3 {
+position: absolute;
+opacity: 100%;
+top: -10%;
+left: 10%;
+width: max(20vh, 20vw);
+}
+
+.image4 {
+position: absolute;
+opacity: 50%;
+top: 20%;
+left: 15%;
+width: max(30vh, 30vw);
+}
+
+.image5 {
+position: absolute;
+opacity: 50%;
+top: 5%;
+left: 55%;
+width: max(35vh, 35vw);
+}
+
+.image6 {
+position: absolute;
+opacity: 50%;
+top: -10%;
+left: 79%;
+width: max(22vh, 22vw);
+}
+
+.image7 {
+position: absolute;
+opacity: 50%;
+top: 35%;
+left: -3%;
+width: max(45vh, 45vw);
+}
+
+.image8 {
+position: absolute;
+opacity: 50%;
+top: 35%;
+left: -11%;
+width: max(45vh, 45vw);
+}
+
+.image9 {
+position: absolute;
+opacity: 50%;
+top: 70%;
+left: 22%;
+width: max(25vh, 25vw);
+}
+
+.image10 {
+position: absolute;
+opacity: 50%;
+top: 70%;
+left: 52%;
+width: max(12vh, 12vw);
+}
+
+.image11 {
+position: absolute;
+opacity: 50%;
+top: 70%;
+left: 51%;
+width: max(25vh, 25vw);
+}
+
+.image12 {
+position: absolute;
+opacity: 50%;
+top: 62%;
+left: 79%;
+width: max(25vh, 25vw);
+}
+
+.image13 {
+position: absolute;
+opacity: 50%;
+top: 55%;
+left: 71%;
+width: max(30vh, 30vw);
+}
+
+.image14 {
+position: absolute;
+opacity: 50%;
+top: 40%;
+left: 75%;
+width: max(25vh, 25vw);
+}
+
+.image15 {
+position: absolute;
+opacity: 100%;
+top: 128%;
+left: 22%;
+width: max(25vh, 25vw);
+}
+
+.image16 {
+position: absolute;
+opacity: 100%;
+top: 90%;
+left: 80%;
+width: max(18vh, 18vw);
+}
+
+.image17 {
+position: absolute;
+opacity: 100%;
+top: 150%;
+left: 28%;
+width: max(25vh, 25vw);
+}
+
+.image18 {
+position: absolute;
+opacity: 100%;
+top: 152%;
+left: 68%;
+width: max(35vh, 35vw);
+}
+
+.image19 {
+position: absolute;
+opacity: 50%;
+top: 240%;
+left: 10%;
+width: max(18vh, 18vw);
+}
+
+.image20 {
+position: absolute;
+opacity: 50%;
+top: 260%;
+left: -1%;
+width: max(25vh, 25vw);
+}
+
+.image21 {
+position: absolute;
+opacity: 50%;
+top: 280%;
+left: 20%;
+width: max(20vh, 20vw);
+}
+
+.image22 {
+position: absolute;
+opacity: 50%;
+top: 230%;
+left: 68%;
+width: max(35vh, 35vw);
+}
+
+.image23 {
+position: absolute;
+opacity: 50%;
+top: 313%;
+left: -2%;
+width: max(18vh, 18vw);
+}
+
+.image24 {
+position: absolute;
+opacity: 50%;
+top: 375%;
+left: 12%;
+width: max(14vh, 14vw);
+}
+
+.image25 {
+position: absolute;
+opacity: 50%;
+top: 317%;
+left: 23%;
+width: max(15vh, 15vw);
+}
+
+.image26 {
+position: absolute;
+opacity: 50%;
+top: 382%;
+left: 33%;
+width: max(14vh, 14vw);
+}
+
+.image27 {
+position: absolute;
+opacity: 50%;
+top: 331%;
+left: 45.5%;
+width: max(10vh, 10vw);
+}
+
+.image28 {
+position: absolute;
+opacity: 50%;
+top: 377%;
+left: 51%;
+width: max(16vh, 16vw);
+}
+
+.image29 {
+position: absolute;
+opacity: 50%;
+top: 320%;
+left: 60%;
+width: max(15vh, 15vw);
+}
+
+.image30 {
+position: absolute;
+opacity: 50%;
+top: 377%;
+left: 75%;
+width: max(30vh, 30vw);
+}
+
+.image31 {
+position: absolute;
+opacity: 50%;
+top: 320%;
+left: 81%;
+width: max(15vh, 15vw);
+}
+
+.image34 {
+position: absolute;
+opacity: 100%;
+top: 190%;
+left: 5%;
+width: max(25vh, 25vw);
+}
+
+.faq-container {
+display: grid;
+height: 100vh;
+grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+gap: 20px; /* Space between items */
+padding: 0 20px; /* Add padding to the left and right */
+box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.faq-container small_unbold {
+font-size: max(1.5vh, 1.5vw);
+margin-bottom: 0.2vw;
+}
+
+.speech-bubble {
+position: relative;
+background: url("wedding graphics/500ppi/Asset 42.png") no-repeat center;
+background-size: contain; /* Ensures the image fits within the element */
+padding: 10%; /* Adjust for text placement inside the bubble */
+text-align: center;
+}
