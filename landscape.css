@@ -8,11 +8,11 @@
 /* Import the fonts (ensure paths or sources are correct) */
 @font-face {
     font-family: 'Biro Script';
-    src: url('main/Biro_Script_reduced.otf'); /* Replace with actual path */
+    src: url('Biro_Script_reduced.otf'); /* Replace with actual path */
 }
 @font-face {
     font-family: 'Lemon Tuesday';
-    src: url('main/Lemon\ Tuesday.otf'); /* Replace with actual path */
+    src: url('Lemon\ Tuesday.otf'); /* Replace with actual path */
 }
 
 /* Body styling */
